@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.container div {
+    border: 2px solid red;
+    height: 40px;
+    width: 40px;
+    color: blue;
+}
