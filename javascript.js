@@ -1,51 +1,38 @@
-const row = document.querySelector('.container');
+
 const linebreak = document.createElement('br');
+const theGrid = document.querySelector('.container');
+const theGridChild = document.querySelector('.grid');
 
-function makeRow (num) {
-
-
-    for(i = 0; i < num; i++) {
+function makeRow (x) {
+    for(i = 0; i < x; i++) {
         const myRow = document.createElement('div');
-        myRow.classList.add('gridblock');
-        row.appendChild(myRow);
+        myRow.classList.add('gridblock'); //this class is red blocks
+        theGrid.append(myRow);
+        // theGrid.append(linebreak);
     }
-
 }
 
-function makeGrid (num) {
-    
-    makeRow(3);
-    row.appendChild(linebreak);
-        // const column = document.querySelector('.container');
-        // column.appendChild(linebreak);
-        makeRow(3);
-        
-        
-        // const myCol = document.createElement('div');
-        // myCol.classList.add('gridblock');
-        // myCol.textContent = makeRow (2);
-        // column.appendChild(myCol);
 
+function makeGrid (x, y) {
+    for(j = 0; j < y; j++) {
+        makeRow(x);
+        const myCol = document.createElement('div');
+        myCol.classList.add('gridrock'); //this class is blue blocks
+        theGridChild.append(myCol);
+    }
 }
+makeGrid(4, 4);
 
-makeGrid(3);
 
-// function makeGrid (num) {
-//     for(j = 0; j < num; j++) {
-        
-//         makeRow(num);
 
-//         const line = document.querySelector('.gridrow');
-//         const grid = document.createElement('div');
+// function makeGrid (x, y) {
+//     for(j = 0; j < y; j++) {
+//         makeRow(x);
+//         const myGrid = document.createElement('div');
+//         myGrid.classList.add('gridblock');
+//         theGrid.append(myGrid);
 
-//         for(k = 0; k < num; k++){
-//             makeRow(num);
-//         }
-
-//         grid.classList.add('grid');
-//         line.appendChild(grid);
 //     }
-
 // }
 
-// makeGrid(3);
+// makeGrid(2, 2);
