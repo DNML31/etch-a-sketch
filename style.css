@@ -3,14 +3,13 @@
     width: auto;
     padding-top: 100px;
     display: flex;
-    flex-flow: wrap;
     align-items: flex-start;
     justify-content: center;
 } 
 
-.grid {
+.gridblock {
     border: 2px solid red;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     padding: 5px;
 }
