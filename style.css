@@ -1,13 +1,16 @@
 .container {
+    height: 500px;
+    width: auto;
+    padding-top: 100px;
     display: flex;
     flex-flow: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-}
+} 
 
-.container div {
+.grid {
     border: 2px solid red;
-    height: 40px;
-    width: 40px;
-    color: blue;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
 }
