@@ -1,12 +1,20 @@
 
+
 function makeGrid (x) {
-    
+   
+    const theGrid = document.querySelector('.container');
+
     for(i = 0; i < x; i++) {
-        const theGrid = document.querySelector('.container');
-        const myRow = document.createElement('div');
-        myRow.classList.add('block'); 
-        theGrid.append(myRow);
+        const block = document.createElement('div');
+        theGrid.append(block);
+        block.addEventListener('mouseenter', ()=> {
+            block.classList.add('change');
+        });
     }
+
+
 }
 
 makeGrid(256); 
+
+
