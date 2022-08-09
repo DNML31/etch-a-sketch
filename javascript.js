@@ -2,8 +2,9 @@ let block;
 let theGrid;
 
 function makeGrid (x) {
-    x = prompt("how many blocks in the grid?");
-    for(i = 0; i < x; i++) {
+    x = prompt("how many blocks per side?");
+    let y = x * x;
+    for(i = 0; i < y; i++) {
         const theGrid = document.querySelector('#container');
         const block = document.createElement('div');
         theGrid.append(block);
@@ -15,18 +16,21 @@ function makeGrid (x) {
 
 
 const btn = document.querySelector('.btn');
+
 btn.addEventListener('click', () => {
 
-let answer = document.getElementById('container').hasChildNodes();
-let container = document.getElementById('container');
+    let answer = document.getElementById('container');
+    let container = document.getElementById('container');
     
-if (answer == true) {
-    while (container.firstChild) {
-    container.removeChild(container.firstChild);
-    }
-} else {
-    makeGrid();
-} 
+    if (answer.hasChildNodes()) {
+        while (container.firstChild) {
+        container.removeChild(container.firstChild);
+        }
+        makeGrid();
+    } else {
+        makeGrid();
+        return;
+    } 
 });
 
 //	*element.querySelectorAll(selectors) returns a “nodelist” containing 
