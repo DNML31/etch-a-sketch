@@ -1,12 +1,10 @@
-let theGrid;
 let block;
-
+let theGrid;
 
 function makeGrid (x) {
-   
-    const theGrid = document.querySelector('.container');
-
+    x = prompt("how many blocks in the grid?");
     for(i = 0; i < x; i++) {
+        const theGrid = document.querySelector('#container');
         const block = document.createElement('div');
         theGrid.append(block);
         block.addEventListener('mouseenter', ()=> {
@@ -14,21 +12,38 @@ function makeGrid (x) {
         });
     }
 }
-makeGrid(256);
 
-function btnPress () {
 
-    let container = document.getElementsByClassName('container');
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', () => {
+
+let answer = document.getElementById('container').hasChildNodes();
+let container = document.getElementById('container');
+    
+if (answer == true) {
     while (container.firstChild) {
-        container.removeChild(container.firstChild);
+    container.removeChild(container.firstChild);
     }
+} else {
+    makeGrid();
+} 
+});
 
-    const btn = document.querySelector('.btn');
-    btn.addEventListener('click', () => {
-        num = prompt("How big do you want the grid?");
-        makeGrid(num);
+//	*element.querySelectorAll(selectors) returns a “nodelist” containing 
+// references to all of the matches of the selectors
+// try referencing all previous divs and remove them before adding
+// new ones.
 
-    });
+// 1 - queryselectorall (divs or class that divs share)
+// 2 - delete them
+// 3 - re-create blocks with the new number
 
-}
-btnPress();
+
+
+// anonymous functions - can be stored in variable
+
+// const funkyFunction = function(music, isWhiteBoy) {
+//     if (isWhiteBoy) {
+//       console.log('Play: ' +  music);
+//     }
+//   }
