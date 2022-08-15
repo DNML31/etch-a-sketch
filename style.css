@@ -24,7 +24,7 @@ button {
     justify-content: center;
     background-color: white;
     border: 1px solid black;
-    padding: 1px;
+    /* padding: 1px; */
 }
 
 #container:hover {
@@ -32,6 +32,8 @@ button {
 }
 
 div {
+    flex-shrink: 1;
+    flex-grow: 1;
     border: 1px solid rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     height: 55px;
@@ -41,3 +43,5 @@ div {
 .change {
     background-color: blue;
 }
+
+/* incorporate flex-grow or shrink for changing block sizes? */
