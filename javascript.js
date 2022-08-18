@@ -6,7 +6,7 @@ function makeGrid () {
     let x = prompt("how many blocks per side?");
     let y = x * x;
 
-    let z = (600 / x) + "px";
+    let z = (700 / x) + "px";
 
     if (typeof y === "number") {
 
