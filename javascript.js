@@ -6,6 +6,8 @@ function makeGrid () {
     let x = prompt("how many blocks per side?");
     let y = x * x;
 
+    let z = (600 / x) + "px";
+
     if (typeof y === "number") {
 
         if (x > 100) {
@@ -17,6 +19,10 @@ function makeGrid () {
 
                 const theGrid = document.querySelector('#container');
                 const block = document.createElement('div');
+
+                block.style.height = z;
+                block.style.width = z;
+
                 theGrid.append(block);
                 block.addEventListener('mouseenter', ()=> {
                     block.classList.add('change');
